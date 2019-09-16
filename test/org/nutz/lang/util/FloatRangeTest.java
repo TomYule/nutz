@@ -33,6 +33,7 @@ public class FloatRangeTest {
     public void onTest() {
         FloatRange r = FloatRange.make(".3 : .5");
         assertTrue(r.on(.3f));
+        assertTrue(r.on(.5f));
     }
 
 }

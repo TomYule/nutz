@@ -72,6 +72,15 @@ public class HttpTest {
         assertEquals("0xKhTmLbOuNdArY-5DA6CD94-6D26-4C89-9F8D-09307F3A6F97", boundary);
     }
 
+    @Test
+    public void Test_httpReq() {
+        Map<String, Object> parms = new HashMap<String, Object>();
+        parms.put("version", "NutzTest");
+        parms.put("website", Nutz.version());
+        Response response = Http.httpReq("http://nutztest.herokuapp.com/", Request.METHOD.POST,parms, null,5 * 1000, Sender.Default_Conn_Timeout);
+        assertTrue(response.getStatus() == 200);
+    }
+
     // @Test
     // public void test_yeelink() {
     // //String key = "f7bd63b34b30303a11a36f6fd7628ef4";
